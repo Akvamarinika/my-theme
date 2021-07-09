@@ -1,0 +1,69 @@
+h1{font-size: 24px;}
+h2{
+  font-size: 48px;
+  margin-top: 50px
+}
+.container{
+  width: 100%;
+  max-width: 850px;
+}
+header{
+  background-color: #06d6a0;
+  position: relative;
+  height: auto;
+  padding-bottom: 20px;
+  padding-left: 100px
+}
+li a{color: #fff}
+header::after{
+  content: '';
+  background-image: url("../img/fon-footer.png");
+  transform: rotate(180deg);
+  background-repeat: repeat-x;
+  width: 100%;
+  height: 23px;
+  position: absolute;
+  bottom: -10px;
+  left: 0
+}
+p{
+  color: #26547c;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 4px
+}
+.return{
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  color: #26547c;
+  margin-top: 25px;
+  margin-bottom: 65px;
+}
+.return img{margin-right: 8px;}
+.contact__info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap:wrap
+}
+.contact__info{background-color: #fff}
+.contact-info__item{
+  display: flex;
+  align-items: center;
+}
+.round__title{margin-left: 8px}
+.contact-info__item a{margin-right: 20px}
+.contact-info__item a:last-child{margin-right: 0px}
+.contact__map{margin-top: 45px}
+@media screen and (max-width: 1135px){
+  .container{
+    width: 100%
+  }
+}
+@media screen and (max-width: 900px){
+  ul{display: none}
+}
+@media screen and (max-width: 670px){
+  .contact__info h1{margin-bottom: 20px}
+}
