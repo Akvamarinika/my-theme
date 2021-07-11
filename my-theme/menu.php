@@ -8,24 +8,22 @@ get_header();
 	<?php if( have_rows('menuTovars', 'options') ):  while ( have_rows('menuTovars', 'options') ) : the_row();?>
 	
 		<div class="cake__item-modal <?php the_sub_field('menuItem__class', 'options') ?>" id="<?php the_sub_field('menuTaovarID', 'options') ?>">
-			<header>
-		  <button id="menuButtonn" onclick="menuButtonModal()"></button>
-		  <label for="menuButtonn" class="lbl">
-				<?php $burger__main = get_field('burger', 'options');
-				echo wp_get_attachment_image( $burger__main );?>
-				</label>
-		  <ul class="menu-modal" id="headerMenu-modal">
-			<li><a href="http://kggg.site/menu/">Меню</a></li>
-			<li><a href="http://kggg.site/cakes/">Целые торты</a></li>
-			  <li><div class="logo">
-				  <?php
-				  	$imageg = get_field('header_logo-white', 'options');
+		<header>
+			<nav class='my-menu'> <?php wp_nav_menu( array( 'theme_location' => 'left_nav', 'menu_class' => 'menu', 'menu_id' => 'headerMenu', 'container' => false ) ); ?>         
+			  <a href="http://kggg.site/"class="logo">
+				<?php
+					$image = get_field('header__logo', 'options');
+					$image2 = get_field('header_logo-white', 'options');
 					$size = 'full';
-					echo wp_get_attachment_image( $imageg, $size );?>
-				  </div></li>
-			<li><a href="http://kggg.site/loyalty/">Программа лояльности</a></li>
-			<li><a href="http://kggg.site/contacts/">Контакты</a></li>
-		  </ul>
+					if ($post->ID == 120) {
+						echo wp_get_attachment_image( $image, $size );
+					} else{
+						echo wp_get_attachment_image( $image2, $size );
+					}
+				?>
+			  </a> 
+			  <?php wp_nav_menu( array( 'theme_location' => 'right_nav', 'menu_class' => 'menu', 'menu_id' => 'headerMenu2', 'container' => false ) ); ?> 
+			</nav> 
     	</header>
 			<h2 class="show section__title"><?php the_sub_field('menuItem__title', 'options') ?></h2>
 			<p class="show link" id="link"><a href="http://kggg.site/">Главная</a> > <a href="http://kggg.site/menu/">Меню</a> > <?php the_sub_field('menuItem__title', 'options') ?></p>
@@ -33,7 +31,7 @@ get_header();
 				<div class="left__menu-item-modal">
 					<nav class="left__menu-block-modal" id="lmb">
 						<?php if( have_rows('categorii', 'options') ):  while ( have_rows('categorii', 'options') ) : the_row();?>
-						<h1 onclick="closeWindow()" class="left__menu-item" data-fm="<?php the_sub_field('spec__class-categorii', 'options') ?>"><?php the_sub_field('categorii__name', 'options') ?></h1>
+						<h4 onclick="closeWindow()" class="left__menu-item title-lvl3" data-fm="<?php the_sub_field('spec__class-categorii', 'options') ?>"><?php the_sub_field('categorii__name', 'options') ?></h4>
 					  <?php endwhile; endif;?>
 				  </nav>
 				</div>
@@ -57,22 +55,14 @@ get_header();
 			<footer id="footer_menu">
 				<div class="footer__nav">
 					<nav>
-						<ul>
-							<li><a href="http://kggg.site/menu/">Меню</a></li>
-							<li><a href="http://kggg.site/cakes/">Целые торты</a></li>
-						</ul>
+						<?php wp_nav_menu( array( 'theme_location' => 'left_nav', 'menu_class' => 'menu', 'container' => false ) ); ?>
 					</nav>
 					<div class="footer__info">
 						<a href="#"><img src="<?php the_field('vk-footer', 'options')?>" alt="icon"></a>
-						<img src="<?php the_field('logo-footer', 'options')?>" alt="FooterLogo" class="footer_logo">
+						<a href="http://kggg.site/"><img src="<?php the_field('logo-footer', 'options')?>" alt="FooterLogo" class="footer_logo"></a>
 						<a href="#"><img src="<?php the_field('inst-footer', 'options')?>" alt="icon"></a>
 					</div>
-					<nav>
-						<ul>
-							<li id="footer-mrg"><a href="http://kggg.site/loyalty/">Программа лояльности</a></li>
-							<li><a href="http://kggg.site/contacts/">Контакты</a></li>
-						</ul>
-					</nav>
+						<?php wp_nav_menu( array( 'theme_location' => 'right_nav', 'menu_class' => 'menu', 'container' => false ) ); ?> 
 				</div>
 				<center><img src="<?php the_field('work', 'options')?>" alt="" class="work"></center>
 			</footer>
@@ -81,17 +71,22 @@ get_header();
 	<?php endwhile; endif;?>
 </div>
     <section>
-      <h2 class="show section__title">Меню</h2>
-      <p class="show link" id="link"><a href="http://kggg.site/">Главная</a> > <a href="http://kggg.site/menu/">Меню</a></p>
+      <h1 class="show section__title main-title"><?php single_post_title(); ?></h1>
+      <p class="link"><?php get_breadcrumb(); ?></p>
       <div class="container">
 		  <button class="lmb_open" onclick="openNavMenu()">Категории</button>
         <div class="menu__block">
 		  
+		<div id="nav-wrapper">		
           <nav class="left__menu-block" id="lmbhead">
 			 <?php if( have_rows('categorii', 'options') ):  while ( have_rows('categorii', 'options') ) : the_row();?>
-			  	<h1 onclick="openNav()" class="left__menu-item" data-f="<?php the_sub_field('spec__class-categorii', 'options') ?>"><?php the_sub_field('categorii__name', 'options') ?></h1>
+			  <div class="left__menu-container">
+				  <h4 onclick="openNav()" class="left__menu-item title-lvl3" data-f="<?php the_sub_field('spec__class-categorii', 'options') ?>"><?php the_sub_field('categorii__name', 'options') ?></h4>
+			  </div>
+			  	
 			  <?php endwhile; endif;?>
           </nav>
+		</div>	
           <div id="right__menu-block">
 			  <?php if( have_rows('menuTovars', 'options') ):  while ( have_rows('menuTovars', 'options') ) : the_row();?>
 				<div class=" show cake__item <?php the_sub_field('menuItem__class', 'options') ?>" data-attr="<?php the_sub_field('menuTaovarID', 'options') ?>">
@@ -118,3 +113,5 @@ get_header();
       </div>
     </section>
 <?php get_footer(); ?>
+
+

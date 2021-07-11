@@ -124,6 +124,11 @@ header::after{
 .container{width: 1150px}
 .left__menu-item, .left__menu-item-modal {font-size:24px;margin-top: 20px; cursor: pointer; transition:.4s}
 .left__menu-item:hover, .left__menu-item-modal:hover{color: #06d6a0;}
+.left__menu-item{
+	color: #26547c;
+	font-family: 'Junegull-Regular';
+	text-transform: uppercase;
+}
 header{
   background-color: #06d6a0;
 }
@@ -215,9 +220,33 @@ header{
 .block{display: block}
 .overflow{overflow-x: hidden}
 .show{opacity: 0; transition: .4s}
-.color{color: #06d6a0;}
+.color{
+	color: #06d6a0;
+}
+
+
+.left__menu-container.left__item-container--active::after {
+    content: url("../img/vector-curl.png");
+    margin: auto;
+    position: absolute;
+	top: 0%;
+    left: calc(100% + 15px);
+}
+
+.left__menu-container{
+	  position: relative;
+}
+
+.left__menu-block {
+  border-right: 1px solid #ebebeb;
+  padding-right: 35px;
+
+}
+
+
 .flex{left:0!important}
-.height{height: auto!important}
+.height{height: auto!important;
+}
  @keyframes change-background {
 	 0%{
 		 opacity: 0

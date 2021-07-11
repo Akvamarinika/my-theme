@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	<section class="main__section">
-			<h1><?php the_field('main_title', 'options');?></h1>
+			<h1><?php single_post_title(); ?></h1>	
 			<div class="main__img"><img src="<?php the_field('main__icon', 'options');?>" alt=""></div>
 		</section>
 		<section>
@@ -140,7 +140,7 @@
 		<div class="item__icon"><img src="<?php the_sub_field('card__icon', 'options') ?>" alt=""></div>
 		<div class="dots">
 			<div class="dots__item"></div>
-			<h1 class="item__title"><?php the_sub_field('card__title', 'options') ?></h1>
+			<h3 class="item__title title-lvl3"><?php the_sub_field('card__title', 'options') ?></h3>
 			<div class="dots__item"></div>
 		</div>
 		<p><?php the_sub_field('card__descript') ?></p>
@@ -183,7 +183,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="contact__map"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3ab96c21f5aaac074ace3e08534ab24466fd849318e2c8c7a91aad73fe2e1314&amp;source=constructor" width="100%" height="502" frameborder="0"></iframe></div>
+				<div class="contact__map" id="map"></div>
 			</div>
 		</section>
 

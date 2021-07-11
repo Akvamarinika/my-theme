@@ -5,12 +5,12 @@ Template Name: contact
 get_header();
 ?>
     <section>
-      <h2 class="section__title"><?php the_field('contacts__title', 'options');?></h2>
-      <p><a href="http://kggg.site/">Главная</a> > <a href="http://kggg.site/contacts/">Контакты</a></p>
+      <h1 class="section__title main-title"><?php single_post_title(); ?></h1>
+      <p class="link"><?php get_breadcrumb(); ?></p>
       <a href="http://kggg.site/" class="return"><img src="<?php the_field('return-icon', 'options');?>" alt=""> Вернуться на главную</a>
       <div class="container">
         <div class="contact__info">
-          <h1><?php the_field('city_contact', 'options');?></h1>
+          <h2 class="title-lvl3"><?php the_field('city_contact', 'options');?></h2>
           <div class="contact-info__item">
             <img src="<?php the_field('phone-icon', 'options');?>" class="item__round"></img>
             <div class="round__title"><?php the_field('phone', 'options');?></div>
@@ -24,6 +24,6 @@ get_header();
       </div>
     </section>
     <section>
-      <div class="contact__map"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3ab96c21f5aaac074ace3e08534ab24466fd849318e2c8c7a91aad73fe2e1314&amp;source=constructor" width="100%" height="523" frameborder="0"></iframe></div>
+      <div class="contact__map" id="map"></div>
     </section>
 <?php get_footer(); ?>

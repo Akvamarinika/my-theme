@@ -4,9 +4,10 @@ Template Name: loyalty
 */
 get_header();
 ?>
+
     <section>
-      <h2 class="section__title"><?php the_field('loyalty__title', 'options');?></h2>
-      <p class="link"><a href="http://kggg.site/">Главная</a> > <a href="http://kggg.site/loyalty/">Программа лояльности</a></p>
+	  <h1 class="main-title"><?php single_post_title(); ?></h1>
+	   <p class="link"><?php get_breadcrumb(); ?></p>
       <div class="img__container">
         <a href="http://kggg.site/" class="return"><img src="<?php the_field('return-icon', 'options');?>" alt=""> <?php the_field('reurn', 'options');?></a>
         <img src="<?php the_field('loyalty__img', 'options');?>" alt="" class="layout">

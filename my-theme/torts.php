@@ -25,20 +25,20 @@ get_header();
 					<input type="text" placeholder="Ваш телефон">
 					<textarea placeholder="Комментарии к заказу"></textarea>
 					<div class="checked">
-						<input type="checkbox" id="radiobtn" onchange="check()">
+						<input type="checkbox" id="radiobtn"  class="chbtn1" onchange="checkradio()">
 						<label for="radiobtn" class="checked__item"></label>Согласен(а) на обработку моих персональных данных
 					</div>
-					<div class="submit"><button type="submit" id="submit" disabled="">Отправить заявку</button></div>
+					<div class="submit btn-submit"><button type="submit" id="submit-btn1" >Отправить заявку</button></div>
 				</form>
 		</div>
 		<?php endwhile; endif;?>
 	</div>
   <section>
-    <h2 class="section__title"><?php the_field('cakes__title', 'options');?></h2>
-    <p class="link"><a href="http://kggg.ru/">Главная</a> > <a href="http://kggg.ru/cakes/">Целые торты</a></p>
+    <h1 class="main-title"><?php single_post_title(); ?></h1>
+    <p class="link"><?php get_breadcrumb(); ?></p>
     <div class="container">
       <div class="cakes__text"><?php the_field('cakes__descript', 'options');?></div>
-      <center><img src="../wp-content/themes/site/img/line-mini.png" alt="" class="mini__line"></center>
+      <center><img src="../wp-content/themes/my-theme/img/line-mini.png" alt="" class="mini__line"></center>
       <h4><?php the_field('cakes__title-2', 'options');?></h4>
       <div class="cakes__text"><?php the_field('cakes__descript-2', 'options');?></div>
     </div>
@@ -68,6 +68,6 @@ get_header();
 		</div>
     </div>
   </section>
-	
+
 <?php
 get_footer();

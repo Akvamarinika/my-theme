@@ -19,14 +19,30 @@ h1{
   color: #26547c;
 }
 h2{
-  font-size: 36px;
+  font-size: 48px;
   text-align: center;
   color: #06d6a0;
 }
+
+h3{font-size: 34px;}
 .container{
   width: 1135px;
   margin: 0 auto;
 }
+
+.main-title{
+	font-size: 48px;
+	margin-top: 50px;
+	text-align: center;
+	color: #06d6a0;
+}
+
+.title-lvl3{
+color: #26547c;
+font-family: 'Junegull-Regular';
+text-transform: uppercase;
+}
+
 /*HEADER*/
 #menuButton, .lbl, #menuButtonn{display: none}
 header{
@@ -119,6 +135,12 @@ li a:hover:after,li a:focus:after {width: 115%}
 }
 
 /*MENU*/
+.my-menu {
+  display: flex;
+  justify-content: space-between;
+flex-wrap: nowrap;
+}
+
 .card{
   display: flex;
   justify-content: space-between;
@@ -226,6 +248,10 @@ footer::before{
   position: absolute;
   top: -10px;
   left: 0
+}
+
+#left_footer li, #right_footer li{
+	color: #fff;
 }
 
 footer ul li{margin-right: 45px;}
@@ -473,7 +499,9 @@ footer li a:hover:after,footer li a:focus:after {width: 0%}
     width: 27px;
     height: 15px;
 	}
-	header .menu li:nth-child(3), #headerMenu-modal li:nth-child(3){display:none}
+	 
+header .menu li:nth-child(3), #headerMenu-modal li:nth-child(3){display:none} 
+
 	
   .contact__block{
     grid-template-columns: 1fr;
@@ -502,3 +530,8 @@ footer li a:hover:after,footer li a:focus:after {width: 0%}
 }
 .flex{left:0}
 .overflow{overflow-y:hidden}
+
+#map{
+    width: 100%;
+    height: 523px;
+}
