@@ -4,24 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-		<?php
-		if ($post->ID == 120) {
-			echo 'Главная';
-		}
-		if ($post->ID == 108) {
-			echo 'Целые торты';
-		}
-		if ($post->ID == 117) {
-			echo 'Программа лояльности';
-		}
-		if ($post->ID == 111) {
-			echo 'Контакты';
-		}
-		if ($post->ID == 114) {
-			echo 'Меню';
-		}
-		?>
-	  </title>
+		<?php single_post_title(); ?>
+	 </title>
 
 	<style>
 		.main__section{
